@@ -1,0 +1,15 @@
+510 / 5000
+Resultados de tradução
+I found out that here we have the same project without relying on a damn folder called core
+That Bonieky doesn't explain where or how it works. Here we are going to play Object Oriented
+and be happy. The html and css are already imported, I think it's actually a good idea not to lose
+time with them and fall even in php. Have the basis to actually build a weighty project
+What I think is important to point out here is that with the config done and imported into the index
+the browser already responds. I didn't know it was like that but it's good practice 
+
+Descobri que aqui temos o mesmo projeto sem depender daquela pasta maldita chamada core
+Que o Bonieky não explica de onde ve nem como funciona. Aqui vamos tocar Orientado Objeto
+e sermos felizes. Os html e css já estão importados, eu acho que de fato é uma boa ideia não perder
+tempo com eles e cair mesmo no php. Ter base para de fato contruir um projeto de peso
+O que eu acho importante pontuar aqui é que com o config feito e importado no index
+o browser já responde. Eu não sabia que era assim mas é uma boa prática
