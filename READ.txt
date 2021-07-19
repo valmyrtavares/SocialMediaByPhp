@@ -1,28 +1,4 @@
-
-I found out that here we have the same project without relying on a damn folder called core
-That Bonieky doesn't explain where or how it works. Here we are going to play Object Oriented
-and be happy. The html and css are already imported, I think it's actually a good idea not to lose
-time with them and fall even in php. Have the basis to actually build a weighty project
-What I think is important to point out here is that with the config done and imported into the index
-the browser already responds. I didn't know it was like that but it's good practice  #5
-
-Very interesting class, which needs shooting so as not to get lost. an Auth.php is created that calls dao using
-the user object returns whether or not it has token if it has it fills the user with all its data
-If not, it returns false. The test of this class is to run the browser which must go to a login page and it does not find
-nothing. Because it doesn't have this login page. I think it's the best example of object orientation I
-I've already found it. Many files and features working together for a single purpose
-Log in or not the user. ¨#6 #7
-
-Descobri que aqui temos o mesmo projeto sem depender daquela pasta maldita chamada core
-Que o Bonieky não explica de onde ve nem como funciona. Aqui vamos tocar Orientado Objeto
-e sermos felizes. Os html e css já estão importados, eu acho que de fato é uma boa ideia não perder
-tempo com eles e cair mesmo no php. Ter base para de fato contruir um projeto de peso
-O que eu acho importante pontuar aqui é que com o config feito e importado no index
-o browser já responde. Eu não sabia que era assim mas é uma boa prática #5
-
-Aula muito interessante, que precisa de rodagem para não se perder. é criado um Auth.php que chama dao usando 
-o objeto usuario retorna se tem ou não token se tem ele preenche o usuario com todos os seus dados
-Se não tem retorna false. O teste dessa aula é rodar o browser que deve ir para uma página de login e não encontra 
-nada. Porque não tem essa pagina de login. Eu acho que é o melhor exemplo de orientaçõ objeto que eu 
-já encontrei. Mutos arquivos e funcionalidades trabalhando juntos para um único fim
-Logar ou não o usuário. #6 #7
+I copy the css and images folders into the project without deleting the TEMPLATE folder
+We create our login page with the html that is ready just by adding the $base to the
+links, we did a login_action to receive the login data and send it to a validate
+what will be done in the next commit
