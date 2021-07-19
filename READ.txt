@@ -1,3 +1,7 @@
-Here we have the construction of the registration screen, nothing new. I could do it even without the tutorial, but here
-the novelty is a javascript plugin that creates masks that are very easy to use. awesome of easy
-The registration screen was created with the format of the login screen.
+
+
+In Auth we do a little verification if the email exists using what is already in the dao,
+that's when you understand the weight of Object Orientation. No Signup_action is where the work is from.
+fact done, in this commit we have the verification of dates and if the email exists, if the user exists
+cannot be registered again with the same email. The part of actually sending the data
+will be done in the next commit
