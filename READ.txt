@@ -1,22 +1,3 @@
-In login_action was placed a SESSION that he already taught at the beginning of the course to use
-it's very quiet and an error message was posted when the login page returns now returns with
-a message saying that email or password is wrong
-This message is received in login.php with an endif, much like ednforeach with no major problems
-In our UserDaoMysql we built the two functions that are findByEmail and update, all very
-traditional and within what has already been done
-Who needs these two functions or database connections is Auth.php with its new function
-validate. It is the one that invokes findByEmail and the update this function is created in the Auth, it checks if you have the email
-and if the password are right if you have it generates a token and updates in the database.
-Of course everything is updated in the interface, that is, the two new methods.
-
-
-No login_action foi colocado uma SESSION que ele ja ensinou no começo do curso a usar
-é bem trnquilo e foi posto uma mensagem de erro quando a pagina de login retorna agora retorna com 
-um mensagem dizendo que email ou senha estão errados
-Essa mensagem é recebida em login.php com um endif, muito parecido com o ednforeach sem grande problemas
-No nosso UserDaoMysql fo contruido as duas funções que são findByEmail e update, tudo muito 
-tradicional e dentro do que já foi feito
-Quem precisa dessas duas funções ou conexões com o banco de dados é o Auth.php com sua nova função
-validate. É ela que invoca o findByEmail e o update essa função é criada no Auth, checa se tem o email
-e se a senha estão certas se tiver ele gera um token e atualiza no banco de dados.
-E claro que tudo é atualizado na interface, ou seja, os dois métodos novos.
+Here we have the construction of the registration screen, nothing new. I could do it even without the tutorial, but here
+the novelty is a javascript plugin that creates masks that are very easy to use. awesome of easy
+The registration screen was created with the format of the login screen.
