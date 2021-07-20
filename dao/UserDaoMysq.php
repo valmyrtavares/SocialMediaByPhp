@@ -11,8 +11,9 @@ class UserDaoMysql implements UserDAO {
     private function generateUser($array) {
         $u = new User();
         $u->id = $array['id'] ?? 0;
-        $u->enail = $array['enail'] ?? '';
+        $u->email = $array['email'] ?? '';
         $u->name = $array['name'] ?? 0;
+        $u->password = $array['password'] ?? '';
         $u->birthday = $array['birthday'] ?? '';
         $u->city = $array['city'] ?? ' ';
         $u->work = $array['work'] ?? ' ';
@@ -41,7 +42,9 @@ class UserDaoMysql implements UserDAO {
     }
 
     public function findByEmail($email){
-        if(!empty($token)){
+      
+        if(!empty($email)){
+          
             $sql = $this->pdo->prepare("SELECT * FROM users WHERE email = :email");
             $sql->bindValue(':email', $email);
             $sql->execute();
