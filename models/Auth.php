@@ -9,7 +9,7 @@ class Auth {
     public function __construct(PDO $pdo, $base){
         $this->pdo = $pdo;
         $this->base = $base;
-        $this->dao = new UserDaoMysql($this->pdo)
+        $this->dao = new UserDaoMysql($this->pdo);
     }
     public function checkToken() {
         if(!empty($_SESSION['token'])){
