@@ -4,7 +4,7 @@
 class UserDaoMysql implements UserDAO {
     private $pdo;
 
-    public function __contruct(PDO $driver){
+    public function __construct(PDO $driver){
         $this->pdo = $driver;
     }
 
@@ -67,18 +67,37 @@ class UserDaoMysql implements UserDAO {
         token = :token
         WHERE id = :id ");
     
-    $sql->bindValue(':email', $u->email);
-    $sql->bindValue(':password', $u->password);
-    $sql->bindValue(':name', $u->name);
-    $sql->bindValue(':birthdate', $u->birthdate);
-    $sql->bindValue(':city', $u->city);
-    $sql->bindValue(':work', $u->work);
-    $sql->bindValue(':avatar', $u->avatar);
-    $sql->bindValue(':token', $u->token);
-    $sql->bindValue(':id', $u->id);
-    $sql->execute();
+        $sql->bindValue(':email', $u->email);
+        $sql->bindValue(':password', $u->password);
+        $sql->bindValue(':name', $u->name);
+        $sql->bindValue(':birthdate', $u->birthdate);
+        $sql->bindValue(':city', $u->city);
+        $sql->bindValue(':work', $u->work);
+        $sql->bindValue(':avatar', $u->avatar);
+        $sql->bindValue(':token', $u->token);
+        $sql->bindValue(':id', $u->id);
+        $sql->execute();
 
     return true;
 
+    }
+
+    public function insert(User $u) {
+        $sql = $this->pdo->prepare("INSERT INTO users (
+            email, password, name, birthdate, token
+        ) VALUES (
+            :email, :password, :name, :birthdate, :token
+        ) ");
+        $sql->bindValue(':email',$u->email);
+        $sql->bindValue(':password',$u->password);
+        $sql->bindValue(':name', $u->name);
+        $sql->bindValue(':birthdate', $u->birthdate);
+        $sql->bindValue(':token', $u->token);    
+        echo "Conteudo do ";
+        print_r($u) ;
+       
+        $sql->execute();
+
+        return true;
     }
 }

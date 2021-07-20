@@ -2,7 +2,7 @@
 require_once 'dao/UserDaoMysq.php';
 class Auth {
 
-    public function __contruct(PDO $pdo, $base){
+    public function __construct(PDO $pdo, $base){
         $this->pdo = $pdo;
         $this->base = $base;
     }
@@ -44,6 +44,26 @@ class Auth {
     public function emailExists($email){
         $userDao = new UserDaoMysql($this->pdo);
         return $userDao->findByEmail($email) ? true : false;
+    }
+
+    public function registerUser($name, $email, $password, $birthdate){
+        $userDao = new UserDaoMysql($this->pdo);
+
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $token = md5(time().rand(0, 9999));
+
+
+        $newUser = new User();
+        $newUser->email = $email;
+        $newUser->password = $hash;
+        $newUser->name = $name;
+        $newUser->birthdate = $birthdate;
+        $newUser->token = $token;
+       
+        $userDao->insert($newUser);
+
+        $_SESSION['token'] = $token;
+
     }
 
 

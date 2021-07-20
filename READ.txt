@@ -1,7 +1,19 @@
+It was the first fuck of the course
+I tend to write construct without s. This was once a
+Another is that in the config the dbname has to be next to the = I was running for almost 4 hours
+because of this
+$pdo = new PDO("mysql:dbname=".$db_name.";host =".$db_host, $db_user, $db_pass);
+This one I didn't imagine it was like this. The error screen said it had no database
+and it didn't because the equal wasn't leaning against the dbname. Terrible
+I added some fields on my registration screen
+But most importantly I added the log lines as you can check both Auth and Dao
 
-
-In Auth we do a little verification if the email exists using what is already in the dao,
-that's when you understand the weight of Object Orientation. No Signup_action is where the work is from.
-fact done, in this commit we have the verification of dates and if the email exists, if the user exists
-cannot be registered again with the same email. The part of actually sending the data
-will be done in the next commit
+Foi foda!! o primeiro do curso
+Eu tenho mania de escrever construct sem s. Isso já foi uma 
+Outra é que no config o dbname tem que ficar encostado com o = Fiquei quase 4 horas rodando 
+por causa disso
+$pdo = new PDO("mysql:dbname=".$db_name.";host =".$db_host, $db_user, $db_pass);
+Essa eu não imaginava que estava assim. A tela de erro dizia que não tinha banco de dados
+e não tinha porque o igual não estava encostado no dbname. Terrivel
+Acrescentei alguns campos na minha tela de cadatro
+Mas o mais importante acrescentei as linhas de registro como vc pode conferir tanto no Auth quando dao
