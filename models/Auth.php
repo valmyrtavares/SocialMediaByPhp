@@ -2,16 +2,21 @@
 require_once 'dao/UserDaoMysq.php';
 class Auth {
 
+    private $pdo;
+    private $base;
+    private $dao;
+
     public function __construct(PDO $pdo, $base){
         $this->pdo = $pdo;
         $this->base = $base;
+        $this->dao = new UserDaoMysql($this->pdo)
     }
     public function checkToken() {
         if(!empty($_SESSION['token'])){
             $token = $_SESSION['token'];
 
-            $userDao = new UserDaoMysql($this->pdo);
-            $user = $userDao->findByToken($token);
+           
+            $user =  $this->dao->findByToken($token);
             if($user){
                 return $user;
             }
@@ -22,10 +27,10 @@ class Auth {
     }
 
     public function validateLogin($email, $password){
-        $userDao = new UserDaoMysql($this->pdo);
+       
 
         
-        $user = $userDao->findByEmail($email);
+        $user =  $this->dao->findByEmail($email);
         if($user){
             
             if(password_verify($password, $user->password)){
@@ -34,7 +39,7 @@ class Auth {
 
                 $_SESSION['token'] = $token;
                 $user->token = $token;
-                $userDao->update($user);
+                $this->dao->update($user);
 
                 return true;
             }
@@ -42,13 +47,12 @@ class Auth {
         }
     }
 
-    public function emailExists($email){
-        $userDao = new UserDaoMysql($this->pdo);
-        return $userDao->findByEmail($email) ? true : false;
+    public function emailExists($email){       
+        return  $this->dao->findByEmail($email) ? true : false;
     }
 
     public function registerUser($name, $email, $password, $birthdate){
-        $userDao = new UserDaoMysql($this->pdo);
+      
 
         $hash = password_hash($password, PASSWORD_DEFAULT);
         $token = md5(time().rand(0, 9999));
@@ -61,7 +65,7 @@ class Auth {
         $newUser->birthdate = $birthdate;
         $newUser->token = $token;
        
-        $userDao->insert($newUser);
+        $this->dao->insert($newUser);
 
         $_SESSION['token'] = $token;
 

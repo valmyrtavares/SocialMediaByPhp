@@ -1,9 +1,11 @@
-439 / 5000
-Resultados de tradução
-This was the most important class I've had so far.
-I learned why they don't talk about debugging in php
-Because putting an echo followed by an exit you make the code exactly where you need it
-And this is more than just the heaven.
-With this tool I could easily find why I wasn't logging in
-Easily like grown-ups. I just think it should be clearer.
-I logged out tupinamba and fixed my login bugs 
+Aqui segue um refatoramento do Auth.php
+Eu todas as funções que eu preciso instanciar o dao passando o pdo para o parametro dele 
+eu crio uma variável na classe Auth e substituo o 
+
+  $userDao = new UserDaoMysql($this->pdo);
+  $user = $userDao->findByToken($token);
+
+  por 
+
+   $user =  $this->dao->findByToken($token);
+   
