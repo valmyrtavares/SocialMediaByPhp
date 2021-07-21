@@ -1,2 +1,22 @@
-In this class it was a famous copy and paste inside the index I made some mistakes for closing and opening tags
-And I made a new partials called feed-editor. Pure html and was inserted into index.php
+Here we can make insertions in the database post table in this commit
+The interesting thing is that in feed_editor_action I have access to the user through $userInfo = $auth->checkToken();
+This although it works and I have tested it, it was a little unclear
+1 Feed-editor has done a terrible stumble to get the information from such a contenteditable="true"
+I had never heard of it, but the fact is that it receives the information there and via javascript I send it
+to a type-hidden input inside a form and forward the information
+2 In the User interface, a function that was missing was put, which is the insert
+3 A class post was made to receive the information along with a new interface
+4 A PostDaoMysql was created with its insert to receive and send the information to the db
+5 And finally an action that receives the information from the html, tests and sends it to the dao.
+
+
+Aqui conseguimos nesse commit fazer inserções na tabela post do banco de dados
+O interessante é que no feed_editor_action eu tenho acesso ao user atraves do $userInfo = $auth->checkToken();
+Isso apesar de funcionar e eu ter testado ficou um pouco obscuro
+1 Feed-editor foi feito um cambalacho terrível para pegar a informação de um tal de contenteditable="true"
+Eu nunca tinha ouvido falar disso, mas o fato é que ele recebe a informação ai e via javascript eu mando
+para um input type-hidden detro de um form e mando para frente a informação
+2 Na interface do User foi posta uma função que estava faltando que é a inserte
+3 Foi feito uma class post para receber as informações junto com uma nova interface
+4 Foi criado um PostDaoMysql com seu insert para receber e mandar as informações para o db
+5 E finalmente um action que recebe as informações do html, testa e manda para o dao.
