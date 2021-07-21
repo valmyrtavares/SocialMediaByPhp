@@ -1,9 +1,1 @@
-1 Foi colocado a base dentro dos links. Nesse caso específico eu esqueci de colocar o sinal de igual
-e por isso quebrou tudo.
-2 Foi incluido uma classe active que depende da variavel $activeMenu que está dentro do index
-dependendo do valor dela acende ou não o background no menu aside. mostrando qual é o 
-menu que está sendo mostrando
-3 No header também foi acrescentado a $base e foi trocado o nome fixo por uma variável na linha 2 do user O avatar
-não funcionou porque os user que eu tenho hj no banco de dados não tem nenhum avatar. Acho que quando 
-ele começar dinamicamente a acrescentar avatares eu revejo essa parte
-   
+Foi retirado uma linha do arquivo javascript
