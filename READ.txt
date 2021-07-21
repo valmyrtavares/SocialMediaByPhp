@@ -1,1 +1,2 @@
-Foi retirado uma linha do arquivo javascript
+In this class it was a famous copy and paste inside the index I made some mistakes for closing and opening tags
+And I made a new partials called feed-editor. Pure html and was inserted into index.php
