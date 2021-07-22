@@ -1,11 +1,18 @@
 <?php
 require 'config.php';
 require 'models/Auth.php';
+require 'dao/UserRelationDaoMysql.php';
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
-$activeMenu = 'lulu';
+$activeMenu = 'home';
 
+
+$urlDao = new UserRelationDaoMysql($pdo);
+$userList = $urlDao->getRealtionsFrom($userInfo->id);
+
+print_r($userList);
+exit;
 require 'partials/header.php';
 require 'partials/menu.php';
 ?>
