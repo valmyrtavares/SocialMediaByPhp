@@ -5,4 +5,11 @@ vincular um usuário a um post. Resolvido isso o resto foi.
 Na segunda aula foi a implementação dos posts dentro de um novo partials chamado de 
 feed-item
 Vamos detalhar
+Foi acrescentado mais uma function dentro do post   public function getHomeFeed($id_user);
+Foi dentro do PostDaoMysql que duas funções foram implementadas e ai deve estar a maior parte da 
+sua atenção. Tem uma função de trazer o feed para a home e tem outra para criar os objetos
+Dentro da userDaoMysql foi implementado o findById
+De importante é isso o resto é código
+O index está mostrando os feeds nome do usuário Só as imagens que não estão carreagando
+
 
