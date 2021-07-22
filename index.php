@@ -1,18 +1,19 @@
 <?php
 require 'config.php';
 require 'models/Auth.php';
-require 'dao/UserRelationDaoMysql.php';
+require 'dao/PostDaoMysql.php';
+
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'home';
 
 
-$urlDao = new UserRelationDaoMysql($pdo);
-$userList = $urlDao->getRealtionsFrom($userInfo->id);
+$postDao = new PostDaoMysql($pdo);
+$feed = $postDao->getHomeFeed($userInfo->id);
 
-print_r($userList);
-exit;
+
+
 require 'partials/header.php';
 require 'partials/menu.php';
 ?>
@@ -20,6 +21,11 @@ require 'partials/menu.php';
     <div class="row">
         <div class="column pr-5">
             <?php require 'partials/feed-editor.php'; ?>        
+
+            <?php foreach($feed as $item): ?>
+            <?php require 'partials/feed-item.php'?>
+            <?php endforeach; ?>
+          
         </div>
         <div class="column side pl-5">
             <div class="box banners">

@@ -1,4 +1,8 @@
-Here through the userrelations table we get the user ids that we follow
-for that we created our class with the UserRelation.php attributes, its UserRelationDaoMysql and
-we implement it by instantiating it in our index. Little thing. And constructions that were
-all done before
+Essas são duas aulas difíceis que eu acabei juntando sem querer
+A minha tabela posts estava errada. Não tinha id_user e acabei rodando bastante
+para entender como funciona a relação entre o user e o post, logo não tinha como 
+vincular um usuário a um post. Resolvido isso o resto foi. 
+Na segunda aula foi a implementação dos posts dentro de um novo partials chamado de 
+feed-item
+Vamos detalhar
+
