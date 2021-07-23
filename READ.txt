@@ -1,4 +1,11 @@
-Foi posto alguns htmls dentro do perfil e carregado um id de usuario
-Nada importante apesar o monte de código html que foi posto dentro do perfil
+This was a class on filling in data in the profile.
+Very important. I took a lot of errors due to lack of attention, but the project is getting
+big so it's even normal for the thing to run with a certain resistance
+What I emphasize here is that if I haven't learned how to debug the code I have stopped
+to many classes ago. I was only able to walk with some difficulty because I was able to debug
+There's a new trick about calculating years that's in lines 36 to 38 that kill the riddle with
+very easily. There was still a variable with the name of the day that was destroying the count
+of years, but thanks to debug I found the error properly
+This is a class on filling in the profile data
 
 

@@ -1,8 +1,10 @@
 <?php
 require 'config.php';
 require 'models/Auth.php';
-require 'dao/PostDaoMysql.php';
-require 'dao/UserDaoMysql.php';
+require 'dao/PostDaoMysql.php';//Só com o PostDaoMysql eu posso instanciar tanto o postDao quanto o userDao
+
+
+
 
 
 $auth = new Auth($pdo, $base);
@@ -10,8 +12,8 @@ $userInfo = $auth->checkToken();
 $activeMenu = 'profile';
 
 $id = filter_input(INPUT_GET, 'id');
-if($id){
-    $id = $userInfo->id;
+if(!$id){
+    $id = $userInfo->id;//Se não tiver id assume o id de quem está logado
 }
 
 $postDao = new PostDaoMysql($pdo);
@@ -22,34 +24,46 @@ $userDao = new UserDaoMysql($pdo);
 $feed = $postDao->getHomeFeed($userInfo->id);*/
 
 
-
 require 'partials/header.php';
 require 'partials/menu.php';
+
+$user = $userDao->findById($id);
+if(!$user) {
+    header('Location: ' .$base);
+    exit;
+}
+
+$dateFrom = new DateTime($user->birthdate);
+$dateTo = new DateTime('today');
+$user->ageYears = $dateFrom->diff($dateTo)->y;
+
 ?>
 <section class="feed">
     <div class="row">
         <div class="box flex-1 border-top-flat">
             <div class="box-body">
-                <div class="profile-cover" style="background-image: url('media/covers/cover.jpg');"></div>
+                <div class="profile-cover" style="background-image: url('<?=$base; ?>/media/covers/<?=$user->cover;?>');"></div>
                 <div class="profile-info m-20 row">
                     <div class="profile-info-avatar">
-                        <img src="media/avatars/avatar.jpg" />
+                        <img src="<?=$base; ?>/media/avatars/<?=$user->avatar;?>" />
                     </div>
                     <div class="profile-info-name">
-                        <div class="profile-info-name-text">Bonieky Lacerda</div>
-                        <div class="profile-info-location">Campina Grande</div>
+                        <div class="profile-info-name-text"><?=$user->name;?></div>
+                        <?php if(!empty($user->city)):?>
+                            <div class="profile-info-location"><?=$user->city; ?></div>
+                        <?php endif; ?>
                     </div>
                     <div class="profile-info-data row">
                         <div class="profile-info-item m-width-20">
-                            <div class="profile-info-item-n">129</div>
+                            <div class="profile-info-item-n">-1</div>
                             <div class="profile-info-item-s">Seguidores</div>
                         </div>
                         <div class="profile-info-item m-width-20">
-                            <div class="profile-info-item-n">363</div>
+                            <div class="profile-info-item-n">-1</div>
                             <div class="profile-info-item-s">Seguindo</div>
                         </div>
                         <div class="profile-info-item m-width-20">
-                            <div class="profile-info-item-n">12</div>
+                            <div class="profile-info-item-n">-1</div>
                             <div class="profile-info-item-s">Fotos</div>
                         </div>
                     </div>
@@ -67,19 +81,21 @@ require 'partials/menu.php';
                     
                     <div class="user-info-mini">
                         <img src="assets/images/calendar.png" />
-                        01/01/1930 (90 anos)
+                        <?=date('d/m/Y', strtotime($user->birthdate));?>(<?=$user->ageYears; ?>anos)
                     </div>
 
+                <?php if(!empty($user->city)): ?>
                     <div class="user-info-mini">
-                        <img src="assets/images/pin.png" />
-                        Campina Grande, Brasil
+                        <img src="<?=$base;?>/assets/images/pin.png" />
+                        <?= $user->city ?>
                     </div>
-
+                <?php endif; ?>
+                <?php if($user->work): ?>
                     <div class="user-info-mini">
-                        <img src="assets/images/work.png" />
-                        B7Web
+                        <img src="<?=$base;?>/assets/images/work.png" />
+                        <?= $user->work ?>
                     </div>
-
+                <?php endif; ?>
                 </div>
             </div>
 

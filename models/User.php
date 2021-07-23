@@ -5,7 +5,7 @@ class User{
     public $email;
     public $password;
     public $name;
-    public $birthday;
+    public $birthdate;
     public $city;
     public $work;
     public $avatar;

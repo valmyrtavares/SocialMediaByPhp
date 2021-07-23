@@ -15,8 +15,7 @@
 <div class="box feed-item">
     <div class="box-body">
         <div class="feed-item-head row mt-20 m-width-20">
-            <div class="feed-item-head-photo">
-                teste
+            <div class="feed-item-head-photo">              
                 <a href="<?=$base;?>/perfil.php?id=<?=$item->user->id;?>"><img src="<?=$base;?>/media/avatars/<?=$userInfo->avatars;?>" /></a>
             </div>
             <div class="feed-item-head-info">
