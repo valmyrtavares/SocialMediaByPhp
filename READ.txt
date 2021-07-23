@@ -1,11 +1,11 @@
-This was a class on filling in data in the profile.
-Very important. I took a lot of errors due to lack of attention, but the project is getting
-big so it's even normal for the thing to run with a certain resistance
-What I emphasize here is that if I haven't learned how to debug the code I have stopped
-to many classes ago. I was only able to walk with some difficulty because I was able to debug
-There's a new trick about calculating years that's in lines 36 to 38 that kill the riddle with
-very easily. There was still a variable with the name of the day that was destroying the count
-of years, but thanks to debug I found the error properly
-This is a class on filling in the profile data
+Foi trocado um função   getRealtionsFrom por duas   public function getFollowing($id);
+    public function getFollowers($id);  O professor vai de fato fazendo o curso junto com os videos
+    Uma que traz quem está te seguindo e uma de quem vc segue. Não ficou a coisa mais clara do mundo
+    Precisaria de mais cuidado em debugar, mas como deu tudo certo vou seguindo
+    Vou esperar a coisa intortar para reestudar. Enquanto da certo vou indo
+    No perfil ele colocou mais um parametro em findBiId. que se tem o segundo ele traz tudo, senão ele só traz
+    o básico do usuáio. Trocamos alguns contadores com o count() E fizemos um foreach por amigos
+    Foi implementado esse segundo parametro em generateUser
+
 
 

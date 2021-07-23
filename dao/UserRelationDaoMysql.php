@@ -12,7 +12,7 @@ class UserRelationDaoMysql implements UserRelationDAO {
         
     }
 
-    public function getRealtionsFrom($id){
+    public function getFollowing($id){
         $users = [$id];
 
         $sql = $this->pdo->prepare("SELECT user_to FROM userrelations
@@ -23,6 +23,22 @@ class UserRelationDaoMysql implements UserRelationDAO {
             $data = $sql->fetchAll();          
             foreach($data as $item){
                 $users[] = $item['user_to'];
+            }
+        }                
+        return $users;
+    }
+
+    public function getFollowers($id){
+        $users = [];
+
+        $sql = $this->pdo->prepare("SELECT user_from FROM userrelations
+        WHERE user_to = :user_to");
+        $sql->bindValue(':user_to', $id);        
+        $sql->execute();               
+        if($sql->rowCount() > 0){
+            $data = $sql->fetchAll();          
+            foreach($data as $item){
+                $users[] = $item['user_from'];
             }
         }                
         return $users;

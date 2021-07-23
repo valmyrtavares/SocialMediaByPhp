@@ -27,7 +27,7 @@ class PostDaoMysql implements PostDAO{
         
         $array =[];
         $urlDao = new UserRelationDaoMysql($this->pdo);
-        $userList = $urlDao->getRealtionsFrom($id_user);
+        $userList = $urlDao->getFollowing($id_user);
         
         $sql = $this->pdo->query("SELECT * FROM posts 
         WHERE id_user IN (".implode(',', $userList).")
