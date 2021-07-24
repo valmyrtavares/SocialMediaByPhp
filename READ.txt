@@ -1,11 +1,8 @@
-Foi trocado um função   getRealtionsFrom por duas   public function getFollowing($id);
-    public function getFollowers($id);  O professor vai de fato fazendo o curso junto com os videos
-    Uma que traz quem está te seguindo e uma de quem vc segue. Não ficou a coisa mais clara do mundo
-    Precisaria de mais cuidado em debugar, mas como deu tudo certo vou seguindo
-    Vou esperar a coisa intortar para reestudar. Enquanto da certo vou indo
-    No perfil ele colocou mais um parametro em findBiId. que se tem o segundo ele traz tudo, senão ele só traz
-    o básico do usuáio. Trocamos alguns contadores com o count() E fizemos um foreach por amigos
-    Foi implementado esse segundo parametro em generateUser
+Nessa aula eu boiei quase que completamente por não enteder de fato o que
+mudou na minha intervrnção. Dentro do uso das duas funções followings e getFollowers
+fizemos um foreach. Não deu erro. Mas acho que pela falta de dados eu não consegui
+entender direio o que mudou. Essa é a aula 28. Fica aqui um convite a revisitar essa 
+aula para re entender o que exatamente aconteceu aqui
 
 
 
