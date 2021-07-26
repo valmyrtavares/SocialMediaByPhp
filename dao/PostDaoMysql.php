@@ -1,7 +1,7 @@
 <?php
 require_once 'models/Post.php';
 require_once 'dao/UserRelationDaoMysql.php';
-require_once 'dao/UserDaoMysq.php';
+require_once 'dao/UserDaoMysql.php';
 
 class PostDaoMysql implements PostDAO{
     private $pdo;

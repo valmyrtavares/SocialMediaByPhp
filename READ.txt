@@ -1,5 +1,5 @@
-Feito a tela de photos sem problemas
-Só foi acrescida um key que eu não tenho ciência do que isso muda
-mas como não quebrou estamos indo
+Tela de seaech bem tranquila
+O único inconveniente é que o arquivo UserDaoMysql.php estava sem o l final
+e eu estava replicando isso para todos os links por causa do auto complete;
 
 
