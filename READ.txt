@@ -1,4 +1,5 @@
-Feito a tela de amigos sem problemas
-Uma pequena correção colocando o once no index
+Feito a tela de photos sem problemas
+Só foi acrescida um key que eu não tenho ciência do que isso muda
+mas como não quebrou estamos indo
 
 
