@@ -9,7 +9,7 @@ $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
 $activeMenu = 'search';
 
-
+$userDao = new UserDaoMysql($pdo);
 
 $searchTerm = filter_input(INPUT_GET, 's');
 if(empty($searchTerm)){
@@ -17,11 +17,7 @@ if(empty($searchTerm)){
     exit;
 }
 
-
-
-
-
-
+$userList = $userDao->findByName($searchTerm);
 
 require 'partials/header.php';
 require 'partials/menu.php';
@@ -29,9 +25,28 @@ require 'partials/menu.php';
 <section class="feed mt-10">
     <div class="row">
         <div class="column pr-5">
-          <h2>Pesquisando por <?=$searchTerm ?></h2>
-          
+          <h2>Pesquisando por <?=$searchTerm ?></h2>        
+
+          <?= print_r($userList);
+          echo $userList->name;
+          ?>
+
+        <?php foreach($userList as $item): ?>
+            <?=$item->$name; ?>
+            <div class="friend-icon">
+                <a href="<?=$base; ?>/perfil.php?id=<?=$item->id; ?>">
+                    <div class="friend-icon-avatar">
+                        <img src="<?=$base; ?>/media/avatars/<?=$item->avatar; ?>" />
+                    </div>
+                    <div class="friend-icon-name">
+                        <?=$item->name; ?>
+                    </div>
+                </a>
+            </div> 
+        <?php endforeach; ?>
+         
         </div>
+
         <div class="column side pl-5">
             <div class="box banners">
                 <div class="box-header">
