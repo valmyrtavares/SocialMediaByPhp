@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 require 'models/Auth.php';
-require 'dao/PostDaoMysql.php';
+require_once 'dao/PostDaoMysql.php';
 
 
 $auth = new Auth($pdo, $base);

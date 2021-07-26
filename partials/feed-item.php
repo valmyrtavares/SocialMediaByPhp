@@ -8,6 +8,7 @@
             $actionPhrase = 'postou uma foto';
         break;
     }
+   
 ?>
 
 
