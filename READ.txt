@@ -1,12 +1,4 @@
-Class 29 This was by far the longest class I've ever gone through.
-Lack of openings and closings of tags made it all happen.
-GetUserFeed was implemented but it was in profile.php that I caught the most, as it was here
-that the appearance of the news feed was implemented and for lack of a tag it
-did not work. I think it was really bullshit, because of the size of mistakes I made
-
-Class 30 Foi feito uma nova função para trazer fotos dentro do PostDaoMyslq o getPhotosFrom que traz as fotos
-Deu um erro que só se resolve colocand once_require em tudo que é lugar. Essa aula 30 Foi
-bem mais tranquila que a 29
-
+Feito a tela de amigos sem problemas
+Uma pequena correção colocando o once no index
 
 
