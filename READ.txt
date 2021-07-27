@@ -1,4 +1,3 @@
-Criado uma tela de configurações baseado no index que recebe através do auth todas as informações
-do usuário. Teve uns toquinhos de css mas bem pouco, tudo muito fácil
-Partiremos agora para mandar os dados corrigidos
+Todos os dados atualizados com sucesso
+Simples e tranquilo
 
