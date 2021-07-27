@@ -13,6 +13,7 @@ $userDao = new UserDaoMysql($pdo);
 
 require 'partials/header.php';
 require 'partials/menu.php';
+
 ?>
 <section class="feed mt-10">
 <h1>Configurações</h1>

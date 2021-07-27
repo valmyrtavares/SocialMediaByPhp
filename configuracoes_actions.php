@@ -59,7 +59,122 @@ if($name && $email){
         header("Location: " .$base. "/configuracoes.php");
         exit;
     }
+ 
 
+    //AVATAR
+
+    if(isset($_FILES['avatar']) && !empty($_FILES['avatar']['tmp_name'])){
+        $newAvatar = $_FILES['avatar'];
+        
+        
+        if(in_array( $newAvatar['type'], ['image/jpeg', 'image/jpg', 'image/png'])){
+
+            $avatarWidth = 200;
+            $avatarHeight = 200;
+
+            list($widthOrigin, $heightOrigin) = getimagesize($newAvatar['tmp_name']);
+            $ratio = $widthOrigin / $heightOrigin;
+
+            $newWidth = $avatarWidth;
+            $newHeight = $newWidth / $ratio;
+
+            if($newHeight < $avatarHeight){
+                $newHeight = $avatarHeight;
+                $newWidth = $newHeight * $ratio;
+            }
+
+            echo $newWidth. ' x ' .$newHeight;
+
+            $x = $avatarWidth - $newWidth;
+            $y = $avatarHeight - $newHeight;
+
+            $x = $x<0 ? $x/2: $x;
+            $y = $y<0 ? $y/2 : $Y;
+
+            $finalImage = imagecreatetruecolor($avatarWidth, $avatarHeight);
+            switch($newAvatar['type']){
+                case 'image/jpeg':
+                case 'image/jpg':
+                    $image = imagecreatefromjpeg($newAvatar['tmp_name']);
+                break;
+                case 'image/png':
+                    $image = imagecreatefrompng($newAvatar['tmp_name']);
+                break;
+            }
+
+            imagecopyresampled(
+                $finalImage, $image,
+                $x, $y, 0, 0,
+                $newWidth, $newHeight, $widthOrigin, $heightOrigin
+            );
+
+            $avatarName = md5(time().rand(0, 9999)). 'jpg';           
+            
+            imagejpeg($finalImage, './media/avatars/'.$avatarName, 100);
+
+            $userInfo->avatar = $avatarName;
+        }
+    }
+
+     //COVER
+
+     if(isset($_FILES['cover']) && !empty($_FILES['cover']['tmp_name'])){
+        $newCover = $_FILES['cover'];
+        
+       
+        
+        
+        if(in_array( $newCover['type'], ['image/jpeg', 'image/jpg', 'image/png'])){
+
+            $coverWidth = 850;
+            $coverHeight = 313;
+
+            list($widthOrigin, $heightOrigin) = getimagesize($newCover['tmp_name']);
+            $ratio = $widthOrigin / $heightOrigin;
+
+            $newWidth = $coverWidth;
+            $newHeight = $newWidth / $ratio;
+
+            if($newHeight < $coverHeight){
+                $newHeight = $coverHeight;
+                $newWidth = $newHeight * $ratio;
+            }
+
+           
+            $x = $coverWidth - $newWidth;
+            $y = $coverHeight - $newHeight;
+
+            $x = $x<0 ? $x/2: $x;
+            $y = $y<0 ? $y/2 : $Y;
+
+            $finalImage = imagecreatetruecolor($coverWidth, $coverHeight);
+            switch($newCover['type']){
+                case 'image/jpeg':
+                case 'image/jpg':
+                    $image = imagecreatefromjpeg($newCover['tmp_name']);
+                break;
+                case 'image/png':
+                    $image = imagecreatefrompng($newCover['tmp_name']);
+                break;
+            }
+
+           
+            imagecopyresampled(
+                $finalImage, $image,
+                $x, $y, 0, 0,
+                $newWidth, $newHeight, $widthOrigin, $heightOrigin
+            );
+
+            $coverName = md5(time().rand(0, 9999)). 'jpg';           
+            
+            imagejpeg($finalImage, './media/covers/'.$coverName, 100);
+
+            $userInfo->cover = $coverName;
+
+         
+        }
+    }
+ 
 
     $userDao->update($userInfo);
 }

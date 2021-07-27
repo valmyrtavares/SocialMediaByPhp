@@ -127,6 +127,7 @@ class UserDaoMysql implements UserDAO {
         city = :city,
         work = :work,
         avatar = :avatar,
+        cover = :cover,
         token = :token
         WHERE id = :id ");
     
@@ -137,6 +138,7 @@ class UserDaoMysql implements UserDAO {
         $sql->bindValue(':city', $u->city);
         $sql->bindValue(':work', $u->work);
         $sql->bindValue(':avatar', $u->avatar);
+        $sql->bindValue(':cover', $u->cover);
         $sql->bindValue(':token', $u->token);
         $sql->bindValue(':id', $u->id);
         $sql->execute();
