@@ -1,7 +1,4 @@
-A pior aula a que eu mais me dei mal
-Não tem como o foreach rodar em algo que não é um array. 
-No meu caso era um array que deixava de ser array por causa da linha 110 do UserDaoMysql.
-A falta do [] depois do nome array transformava ele um um objeto e o $item-> não conseguia
-acessar o indice. Já passei por isso outra vez.
-Mas acho que agora entendi
+Criado uma tela de configurações baseado no index que recebe através do auth todas as informações
+do usuário. Teve uns toquinhos de css mas bem pouco, tudo muito fácil
+Partiremos agora para mandar os dados corrigidos
 
