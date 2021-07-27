@@ -1,28 +1,7 @@
-End of user editing part
-In the update, the user didn't have the cover and that's why when the user's cover was uploaded it didn't work
-This part of centering and taking the image is not smooth. Have to redo. I was kind of copying
-but when there was a problem I managed to debug and find the problem. this is a breath
-An encouragement that didn't get rid of the problem of the object that wasn't an array.
-But I did well this time in a class with many obstacles
-There are a lot of images to upload so the commit was big
-But the important thing is that I fixed my update user I did a stupid implementation, because of the class
-which made me copy and paste the same code twice. An anti-object Orientation, but the guy was kind of
-doing the code on the spot while it was recording I think it's kind of likely that he'll get fed up
-in the middle of a big class, he doesn't know if it's going on, so sometimes the decisions are kind of
-dumb as copying almost the entire code, but that's ok
-that was it
-
-Fim da parte de edição de usuário
-No update usuario não tinha o cover e por isso na hora de subir a capa do usuário não funcionou
-Essa parte de centralizar e pegar a imagem não é tranquila. Tem que refazer. Eu fui meio copiando
-mas quando deu problema eu consegui debugar e achar o problema. Isso é um alento
-Um alento que não me livrou do problema do objeto que não era array. 
-Mas me sai bem dessa vez em uma aula com muitos intraves
-Tem muitas imagens pra subir pro isso ficou grande o commit
-Mas o importante é que eu corrigi o meu update user Fiz uma implementação meio burra, por causa da aula
-que me fez copiar e colar duas vezes o mesmo código. Um anti- Orientação objeto, mas o cara tava meio que
-fazendo o código na hora enquanto estava gravando eu acho que meio provével que ele fique de saco cheio
-no meio de uma aula grande, que ele não sabe se está rolando, então algumas vezes as decisões são meio
-burras como copiar o codigo quase inteiro, mas tudo bem
-Foi só isso
+Criamos um PostLike para receber os likes, mostrando quem clicou e em que post.
+Mudamos os dados direto no banco de dados e tudo funcionou dentro do sistema
+Eu id_user 6 cliquei no Post_id 3 que era da Id_user 4 e tudo funcionou.
+Agora parece que vai começar um parte tabajara do curso. COm uma parte em javacript que 
+o professor disse que não vai mostrar. Vamos ver
+Todos os módulos novos são refletidos dentro do PostDaoMysql
 
