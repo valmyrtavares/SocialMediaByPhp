@@ -1,5 +1,7 @@
-Tela de seaech bem tranquila
-O único inconveniente é que o arquivo UserDaoMysql.php estava sem o l final
-e eu estava replicando isso para todos os links por causa do auto complete;
-
+A pior aula a que eu mais me dei mal
+Não tem como o foreach rodar em algo que não é um array. 
+No meu caso era um array que deixava de ser array por causa da linha 110 do UserDaoMysql.
+A falta do [] depois do nome array transformava ele um um objeto e o $item-> não conseguia
+acessar o indice. Já passei por isso outra vez.
+Mas acho que agora entendi
 

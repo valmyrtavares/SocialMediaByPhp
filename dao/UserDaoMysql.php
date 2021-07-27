@@ -10,12 +10,12 @@ class UserDaoMysql implements UserDAO {
         $this->pdo = $driver;
     }
 
-    private function generateUser($array, $full=false) {
+    private function generateUser($array, $full = false) {
         $u = new User();
         $u->id = $array['id'] ?? 0;
         $u->email = $array['email'] ?? '';
-        $u->name = $array['name'] ?? 0;
         $u->password = $array['password'] ?? '';
+        $u->name = $array['name'] ?? 0;
         $u->birthdate = $array['birthdate'] ?? '';
         $u->city = $array['city'] ?? ' ';
         $u->work = $array['work'] ?? ' ';
@@ -43,7 +43,7 @@ class UserDaoMysql implements UserDAO {
             $u->photos = $postDaoMysql->getPhotosFrom($u->id);
         }
        
-    
+       
         return $u;
 
     }
@@ -104,15 +104,16 @@ class UserDaoMysql implements UserDAO {
             $sql->execute();
             if($sql->rowCount() > 0 ){
            
-                $data = $sql->fetchAll(PDO::FETCH_ASSOC);             
-             
-                foreach($data as $item){
-                    $array = $this->generateUser($item);
+                $data = $sql->fetchAll(PDO::FETCH_ASSOC);  
+               
+                foreach($data as $item){                   
+                    $array[] = $this->generateUser($item);
                 }              
-            }
+                       
+            }         
 
         }      
-      
+    
         return $array;
 
     }
