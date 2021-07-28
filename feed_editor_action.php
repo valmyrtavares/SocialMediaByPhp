@@ -22,3 +22,4 @@ if($body){
 }
 
 header('Location: ' .$base);
+exit;
