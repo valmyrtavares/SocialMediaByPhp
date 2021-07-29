@@ -27,9 +27,9 @@
     let feedSubmit = document.querySelector('.feed-new-send');
     let feedForm = document.querySelector('.feed-new-form');
 
-   console.log(feedSubmit)
+   
     feedSubmit.addEventListener('click', function(){
-        console.log("Está funcionando")
+      
         let value = feedInput.innerText.trim();
         feedForm.querySelector('input[name=body]').value = value;       
         feedForm.submit();
