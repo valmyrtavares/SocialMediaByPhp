@@ -1,7 +1,0 @@
-Criamos um PostLike para receber os likes, mostrando quem clicou e em que post.
-Mudamos os dados direto no banco de dados e tudo funcionou dentro do sistema
-Eu id_user 6 cliquei no Post_id 3 que era da Id_user 4 e tudo funcionou.
-Agora parece que vai começar um parte tabajara do curso. COm uma parte em javacript que 
-o professor disse que não vai mostrar. Vamos ver
-Todos os módulos novos são refletidos dentro do PostDaoMysql
-

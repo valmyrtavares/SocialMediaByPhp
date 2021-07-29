@@ -1,5 +1,5 @@
 <?php
-    require_once 'feed-item-script.php';
+    require_once 'partials/feed-item-script.php';
 
 
     $actionPhrase = " ";
@@ -31,7 +31,7 @@
                 <br/>
                 <span class="fidi-date"><?=date('d/m/Y', strtotime($item->created_at))?></span>
             </div>
-            <div class="feed-item-head-btn">
+            <div class="feed-item-head-btn"> 
                 <img src="<?=$base?>/assets/images/more.png" />
             </div>
         </div>
@@ -43,7 +43,19 @@
             <div class="msg-btn"><?=count($item->comments);?></div>
         </div>
         <div class="feed-item-comments">           
-           
+            <div class="feed-item-comments-area">
+                <?php foreach($item->comments as $comment): ?>                   
+                    <div class="fic-item row m-height-10 m-width-20">
+                        <div class="fic-item-photo">
+                            <a href="<?=$base;?>/perfil.php?id=<?=$comment->id_user; ?>"><img src="<?=$base ?>/media/avatars/<?=$comment->user->avatar; ?>" /></a>
+                        </div>
+                        <div class="fic-item-info">
+                            <a href="<?=$base;?>/perfil.php?id=<?=$comment->id_user; ?>"><?=$comment->user->name; ?></a>
+                           <?=$comment->body; ?>
+                        </div>
+                    </div>
+                <?php endforeach ?>            
+            </div>           
 
             <div class="fic-answer row m-height-10 m-width-20">
                 <div class="fic-item-photo">
