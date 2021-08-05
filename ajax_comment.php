@@ -23,7 +23,7 @@ if($id && $txt) {
     $newComment->body = $txt;
     $newComment->created_at = date('Y-m-d H:i:s');
 
-    $postCommnetDao->addComment($newComment);
+    $postCommentDao->addComment($newComment);
 
     $array = [
         'error' => '',
