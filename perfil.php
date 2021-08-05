@@ -2,10 +2,7 @@
 require_once 'config.php';
 require_once 'models/Auth.php';
 require_once 'dao/PostDaoMysql.php';//Só com o PostDaoMysql eu posso instanciar tanto o postDao quanto o userDao
-
-
-
-
+require_once 'dao/UserRelationDaoMysql.php';
 
 $auth = new Auth($pdo, $base);
 $userInfo = $auth->checkToken();
@@ -24,6 +21,7 @@ if($id != $userInfo->id){
 
 $postDao = new PostDaoMysql($pdo);
 $userDao = new UserDaoMysql($pdo);
+$userRelationDao = new UserRelationDaoMysql($pdo);
 
 
 /*$postDao = new PostDaoMysql($pdo);
@@ -47,6 +45,8 @@ $user->ageYears = $dateFrom->diff($dateTo)->y;
 //Pegar o feed do usuário
 $feed = $postDao->getUserFeed($id);
 
+$isFollowing = $userRelationDao->isFollowing($userInfo->id, $id);
+
 
 
 
@@ -67,6 +67,11 @@ $feed = $postDao->getUserFeed($id);
                         <?php endif; ?>
                     </div>
                     <div class="profile-info-data row">
+                        <?php if($id != $userInfo->id):?>
+                            <div class="profile-info-item m-width-20">
+                                <a href="follow_action.php?id=<?=$id; ?>" class="button"><?=(!$isFollowing)?'Seguir':'Deixar de seguir'?></a>
+                            </div>
+                        <?php endif; ?>
                         <div class="profile-info-item m-width-20">
                             <div class="profile-info-item-n"><?=count($user->followers) ?></div>
                             <div class="profile-info-item-s">Seguidores</div>

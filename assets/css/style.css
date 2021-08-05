@@ -289,7 +289,10 @@ header .head-side {
 }
 
 .profile-info-item {
-    text-align: center;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 .profile-info-item-n {
     font-weight: bold;
@@ -413,6 +416,7 @@ header .head-side {
  color:white;
  font-size:15px;
  box-shadow: 0 0 3px #999;
+ text-decoration: none;
 }
 .config-form .mini{
     max-height:100px;

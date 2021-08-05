@@ -1,0 +1,8 @@
+Uma comment e um pdo estavam segurando o projeto 
+Tudo funcionando exceto o like que é um toggle e simplesmente entra e sai
+
+Criamos um botão de seguir que só aparece em todos os usuários menos próprio usuario
+Se ele já esta seguindo alguém dentro da tala de perfil dessa pessoa o botão vem como
+deixar de seguir e o contrário bem seguir.
+Fizemos uma função isFollowing para dizer se o usuário está ou não seguindo aquele outro
+E demos um tapa no css
