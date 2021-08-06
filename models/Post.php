@@ -14,6 +14,7 @@ interface PostDAO {
     public function getUserFeed($id_user);
     public function getHomeFeed($id_user);
     public function getPhotosFrom($id_user);
+    public function delete($id, $id_user);
 }
 
 
