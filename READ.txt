@@ -1,6 +1,6 @@
-Nessa aula as fotos são exibidas na timeline e dentro de uma galeria de fotos
-encima, tudo a contento. Só que segundo o próprio professor os outros links
-deixaram de funcioar, graças a esse javascript que ele importou.
-O trabalho desse commit foi principalmente de html. FOi tranquilo
-e sem problemas maiores. Mas no próximo commit esse bug dos links
-serão corrigidos. 
+Foram corrigidos todos os problemas dentro do vanilla
+Foi um passo a passo perigoso se desse alguma coisa errada teria sido
+um problema porque eu quase só copiei. Não foram procedimentos
+difíceis só agora todoas as abas abrem e depois a forma de calcular
+o tamanho das imagens estão feitas. Eu deixei o código antigo 
+comentado
