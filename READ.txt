@@ -1,6 +1,3 @@
-Foram corrigidos todos os problemas dentro do vanilla
-Foi um passo a passo perigoso se desse alguma coisa errada teria sido
-um problema porque eu quase só copiei. Não foram procedimentos
-difíceis só agora todoas as abas abrem e depois a forma de calcular
-o tamanho das imagens estão feitas. Eu deixei o código antigo 
-comentado
+Implementado uma janela de exluir post somente nos meus feeds. 
+Um interessante script que vale a pena olhar com mais calma. Um 
+tanto de css  html javascipt
