@@ -1,7 +1,6 @@
-O mais interessante e positivo é o fato de concertar 5 ou 6 erros seguidos em 5 minutos 
-sem susto que foi o que aconteceu aqui quando fui finalizar a aula. A pena é que nem todas
-as coisas da pra fazer assim
-Tornei funcional o botão de seguir e deixar de seguir, fazendo o follow_action e as
-duas funções que inserem e deletam a relação. Mais do mesmo.
-Vai se criando de fato uma enorme teia de relações dentro do sistema, mas o interessante
-é ser capaz de seguir o fluxo.
+Aula 52
+FOi contruido um botão com javascript para que mande a imagem para o ajax_uplade
+E dentro do ajax é feito toda a manipulação da imagem
+O teste nesse ponto é somente que o nome da imagem ferado aleatóriamente 
+seja exibida na tela principal. O próximo commit é que vamo mostra a imagem
+efetivamente
