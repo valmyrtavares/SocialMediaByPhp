@@ -1,7 +1,5 @@
 <?php
     require_once 'partials/feed-item-script.php';
-
-
     $actionPhrase = " ";
     switch($item->type){
         case 'text':
@@ -10,8 +8,7 @@
         case 'photo':
             $actionPhrase = 'postou uma foto';
         break;
-    }
-   
+    }   
 ?>
 
 
@@ -36,7 +33,16 @@
             </div>
         </div>
         <div class="feed-item-body mt-10 m-width-20">
-            <?=$item->body;?>
+            <?php
+                switch($item->type){
+                case 'text':
+                   echo nl2br($item->body);
+                break;
+                case 'photo':
+                   echo '<img src="'.$base.'/media/uploads/'.$item->body.'"/>';
+                break;
+                }
+            ?>           
         </div>
         <div class="feed-item-buttons row mt-20 m-width-20">
             <div class="like-btn <?= $item->liked ?'on':'';?>"> <?=$item->likeCount;?></div>

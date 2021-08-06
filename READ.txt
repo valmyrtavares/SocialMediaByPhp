@@ -1,6 +1,6 @@
-Aula 52
-FOi contruido um botão com javascript para que mande a imagem para o ajax_uplade
-E dentro do ajax é feito toda a manipulação da imagem
-O teste nesse ponto é somente que o nome da imagem ferado aleatóriamente 
-seja exibida na tela principal. O próximo commit é que vamo mostra a imagem
-efetivamente
+Nessa aula as fotos são exibidas na timeline e dentro de uma galeria de fotos
+encima, tudo a contento. Só que segundo o próprio professor os outros links
+deixaram de funcioar, graças a esse javascript que ele importou.
+O trabalho desse commit foi principalmente de html. FOi tranquilo
+e sem problemas maiores. Mas no próximo commit esse bug dos links
+serão corrigidos. 
