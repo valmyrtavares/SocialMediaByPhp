@@ -81,16 +81,40 @@ class PostDaoMysql implements PostDAO{
     public function getHomeFeed($id_user){
         
         $array =[];
+        $perPage = 2;
+
+        $page = intval(filter_input(INPUT_GET, 'p'));
+        if($page < 1){
+            $page = 1;
+        }
+        $offset = ($page - 1) * $perPage; //offset é quantos itens eu preciso pular para mostrar nessa pagina
+
+        // LIMIT 0, 5 Isso quer dizer numa query que eu quero começar do primeiro item e pegar 5
+
+
         $urlDao = new UserRelationDaoMysql($this->pdo);
         $userList = $urlDao->getFollowing($id_user);        
-        $sql = $this->pdo->query("SELECT * FROM posts 
+        $userList[] = $id_user;
+       
+       $sql = $this->pdo->query("SELECT * FROM posts 
         WHERE id_user IN (".implode(',', $userList).")
-        ORDER BY created_at DESC");       ;
+        ORDER BY created_at DESC, id DESC LIMIT  $offset, $perPage");       ;
         if($sql->rowCount() > 0){
             $data = $sql->fetchAll(PDO::FETCH_ASSOC);
                    
-            $array = $this->_postListToObject($data, $id_user);
+            $array['feed'] = $this->_postListToObject($data, $id_user);
         }
+
+        //Pegar o total de posts
+        $sql = $this->pdo->query("SELECT COUNT(*) AS c FROM posts 
+        WHERE id_user IN (".implode(',', $userList).")");   
+        $totalData = $sql->fetch();
+        $total = $totalData['c'];
+
+        $array['pages'] = ceil($total/$perPage);
+        $array['currentPage'] = $page;
+
+
         return $array;
     }
 

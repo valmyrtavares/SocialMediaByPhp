@@ -1,3 +1,4 @@
-Aqui ele acabou o processo de delete, deletando também todos os
-likes e comments e a foto daquele post. Um delete completo, envolvendo
-sim vários arquivos mais funcionando bem
+Essa é a parte de paginação da home com todos os feeds
+O processo é bem fácil, mas vale a pena um estudo sobre
+a lógica com calma para que ele possa ser fieto apenas com a lógica
+e aqui eu simplesmente copiei.
