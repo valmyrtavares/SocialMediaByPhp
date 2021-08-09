@@ -59,7 +59,14 @@ class PostDaoMysql implements PostDAO{
 
     public function getUserFeed($id_user){   
          
-        $array =[];
+        $array =['feed'=>[]];
+        $perPage = 2;
+
+        $page = intval(filter_input(INPUT_GET, 'p'));
+        if($page < 1){
+            $page = 1;
+        }
+        $offset = ($page - 1) * $perPage;
 
         // $urlDao = new UserRelationDaoMysql($this->pdo);
         // $userList = $urlDao->getFollowing($id_user);        
@@ -67,21 +74,34 @@ class PostDaoMysql implements PostDAO{
 
         $sql = $this->pdo->prepare("SELECT * FROM posts 
         WHERE id_user = :id_user
-        ORDER BY created_at DESC");       
+        ORDER BY created_at DESC  LIMIT  $offset, $perPage");       
         $sql->bindValue(':id_user', $id_user);
         $sql->execute();
+
         if($sql->rowCount() > 0){
-            $data = $sql->fetchAll(PDO::FETCH_ASSOC);
-                   
-            $array = $this->_postListToObject($data, $id_user);
-        }      
+            $data = $sql->fetchAll(PDO::FETCH_ASSOC);                   
+            $array['feed'] = $this->_postListToObject($data, $id_user);
+        }  
+
+        $sql = $this->pdo->prepare("SELECT COUNT(*) as c FROM posts 
+        WHERE id_user = :id_user");       
+        $sql->bindValue(':id_user', $id_user);
+        $sql->execute();
+
+        $totalData = $sql->fetch();
+        $total = $totalData['c'];
+        
+        
+        $array['pages'] = ceil($total/$perPage);
+        $array['currentPage'] = $page;
+
         return $array;
     }
 
     public function getHomeFeed($id_user){
         
         $array =[];
-        $perPage = 2;
+        $perPage = 4;
 
         $page = intval(filter_input(INPUT_GET, 'p'));
         if($page < 1){

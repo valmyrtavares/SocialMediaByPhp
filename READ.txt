@@ -1,4 +1,3 @@
-Essa é a parte de paginação da home com todos os feeds
-O processo é bem fácil, mas vale a pena um estudo sobre
-a lógica com calma para que ele possa ser fieto apenas com a lógica
-e aqui eu simplesmente copiei.
+Feito o mesmo processo de paginação só que na pagina de perfil
+Só que la temos o id e a pagina do usuário dentro do url. Mas muito 
+código repetido

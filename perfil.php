@@ -43,7 +43,10 @@ $dateTo = new DateTime('today');
 $user->ageYears = $dateFrom->diff($dateTo)->y;
 
 //Pegar o feed do usuário
-$feed = $postDao->getUserFeed($id);
+$info = $postDao->getUserFeed($id);
+$feed = $info['feed'];
+$pages = $info['pages'];
+$currentPage = $info['currentPage'];
 
 $isFollowing = $userRelationDao->isFollowing($userInfo->id, $id);
 
@@ -183,16 +186,19 @@ $isFollowing = $userRelationDao->isFollowing($userInfo->id, $id);
             <?php endif; ?>
 
            <?php if (count($feed)>0): ?>
-                <?php foreach($feed as $item): ?>            
-                 
-                    <?php                        
-                        require'partials/feed-item.php'
-                    ?>
-                                       
+                <?php foreach($feed as $item): ?>                 
+                    <?php require'partials/feed-item.php'?>                                      
                 <?php endforeach;?>
-           <?php else: ?>
-            Não há postagens desse usuário
-           <?php endif; ?>
+
+                <div class="feed-pagination">
+                    <?php for($q=0; $q<$pages; $q++):?>
+                        <a class="<?=($q+1==$currentPage)?'active':''?>" href="<?=$base;?>/perfil.php?id=<?=$id; ?>&p=<?=$q+1;?>"><?=$q + 1?></a>    
+                    <?php endfor;?>
+                </div>
+
+                <?php else: ?>
+                    Não há postagens desse usuário
+                <?php endif; ?>
 
 
         </div>
